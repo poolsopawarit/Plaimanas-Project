@@ -1,0 +1,281 @@
+/* =========================================
+   1. รีเซ็ตค่าพื้นฐาน (Reset CSS)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* ป้องกันการเลื่อนแนวนอน */
+    overflow-x: hidden; 
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* =========================================
+   2. แถบเมนูด้านบน (Navigation Bar)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 999;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #888888;
+}
+
+.bag-icon {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =========================================
+   3. โลโก้ขนาดใหญ่ (Hero Text Effect)
+   ========================================= */
+.giant-logo {
+    position: fixed; 
+    /* กลับมาใช้ 50% เพื่อให้อยู่กึ่งกลางพอดีสำหรับจอคอม */
+    top: 20%;
+    left: 50%;
+    /* ต้องมี -50% 2 ตัว เพื่อให้อยู่กึ่งกลางทั้งแนวตั้งและแนวนอน */
+    transform: translate(-50%, -50%); 
+    width: 100%;
+    text-align: center;
+    font-size: 14vw; 
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #ffffff; 
+    z-index: 50; 
+    pointer-events: none; 
+    mix-blend-mode: difference;
+}
+
+/* =========================================
+   4. ส่วนรูปภาพ (Hero Section)
+   ========================================= */
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #000000;
+    margin-top: 60px;
+}
+
+.hero-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: grayscale(100%) contrast(1.2) brightness(0.8); 
+}
+
+/* =========================================
+   5. ส่วนเนื้อหาด้านล่าง
+   ========================================= */
+.content-section {
+    position: relative;
+    z-index: 10;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.content-section p {
+    max-width: 600px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.btn-shop {
+    padding: 15px 40px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: background 0.3s;
+}
+
+.btn-shop:hover {
+    background-color: #444;
+}
+
+/* =========================================
+   7. ส่วนสินค้ารายการใหม่ (New Arrival Section)
+   ========================================= */
+.new-arrival-section {
+    background-color: #ffffff;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.product-card {
+    max-width: 500px; /* ขนาดความกว้างอ้างอิงตามดีไซน์ */
+    width: 100%;
+    text-align: center;
+}
+
+.image-wrapper {
+    /* ใช้ Grid เพื่อง่ายต่อการกำหนดให้รูปและข้อความอยู่ในพื้นที่เดียวกัน */
+    display: grid; 
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.image-wrapper img,
+.image-wrapper video {
+    grid-area: 1 / 1; /* จัดให้อยู่ในเซลล์แรกของ Grid */
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 🔥 บังคับให้เป็นสี่เหลี่ยมจัตุรัส 1:1 เสมอ */
+    object-fit: cover; /* 🔥 ช่วยตัดส่วนที่เกินออกไป ไม่ให้บีบหรือยืดจนเพี้ยน */
+    display: block;
+}
+
+.overlay-new-text {
+    grid-area: 1 / 1; /* นำตัวอักษรมาทับบนรูปภาพในเซลล์เดียวกัน */
+    
+    /* 🔥 เทคนิค Sticky Scroll ให้ตัวหนังสือเลื่อนตามและหยุดที่ก้นภาพ */
+    position: sticky;
+    top: 50vh; /* ยึดที่ระยะกึ่งกลางของหน้าจอ Viewport */
+    
+    place-self: start center; /* จัดเริ่มต้นที่ขอบบนและตรงกลางแนวนอน */
+    transform: translateY(-50%); /* ชดเชยแนวตั้งให้จุดศูนย์กลางตัวหนังสืออยู่ตรงกลางเป๊ะ */
+    
+    color: #ffffff;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+    z-index: 20;
+    pointer-events: none; /* เพื่อไม่ให้ตัวอักษรไปบล็อกเวลากดที่รูป */
+}
+
+.product-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.product-desc-text {
+    font-size: 11px;
+    color: #333333;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* =========================================
+   8. ส่วน Bestseller Section
+   ========================================= */
+.bestseller-section {
+    background-color: #ffffff;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* =========================================
+   9. Responsive Design (ปรับการแสดงผลบนมือถือ)
+   ========================================= */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    .nav-center {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .giant-logo {
+        font-size: 22vw;
+        top: 80px;
+        transform: translate(-50%, 0);
+    }
+
+    .new-arrival-section {
+        padding: 50px 0;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .overlay-new-text {
+        font-size: 3rem;
+        place-self: start start;
+        margin-left: 20%;
+    }
+
+    .product-title, .product-desc-text {
+        padding: 0 20px;
+    }
+
+    .bestseller-section {
+        padding: 50px 10px;
+    }
+
+    .bestseller-section video {
+        max-width: 100%;
+    }
+}

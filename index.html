@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAIMANAS - Frontend Test</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- แถบเมนูด้านบน -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">TH - THB ▾</a>
+        </div>
+
+        <div class="nav-center">
+            <a href="#">WOMEN</a>
+            <a href="#">COLLECTIONS</a>
+            <a href="#">EDITORIAL</a>
+            <a href="#">NEWS</a>
+            <a href="#">STORIES</a>
+        </div>
+
+        <div class="nav-right">
+            <a href="#" class="hide-mobile">SIGN IN</a>
+            <a href="#" aria-label="Shopping Bag">
+                <!-- ใช้ SVG สร้างไอคอนถุงช้อปปิ้งแบบเรียบง่าย -->
+                <svg class="bag-icon" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+    <h1 class="giant-logo">PLAIMANAS</h1>
+
+    <!-- พื้นที่แสดงวิดีโอ -->
+    <section class="hero-section">
+        <video autoplay loop muted playsinline>
+            <source src="assets/img/mockup_video576.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- ส่วนแสดงสินค้าใหม่ -->
+    <section class="new-arrival-section">
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="./assets/img/7b6529a12a4f5ab332188c7dac157175d7d93817.jpg" alt="">
+                <h2 class="overlay-new-text">NEW</h2>
+            </div>
+            <h3 class="product-title">Sed egestas, nibh a condimentum imperdiet</h3>
+            <p class="product-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae</p>
+        </div>
+    </section>
+
+    <!-- ส่วนแสดงสินค้า bestseller -->
+    <section class="bestseller-section">
+        <div class="product-card">
+            <div class="image-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/img/DTS_THE_LEADER_Joey_Bania_Clips_ID10.mp4" type="video/mp4">
+                </video>
+                <h2 class="overlay-new-text">bestseller</h2>
+            </div>
+            <h3 class="product-title">Sed egestas, nibh a condimentum imperdiet</h3>
+            <p class="product-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae</p>
+        </div>
+    </section>
+
+    <!-- เรียกใช้ไฟล์ JavaScript จากโฟลเดอร์ js -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
