@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAIMANAS - Frontend Test</title>
-
-    <link rel="stylesheet" href="./css/style.css">
+    <title>PLAIMANAS - Official Store</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
-
 <body>
 
-    <!-- แถบเมนูด้านบน -->
     <nav class="navbar">
-        <div class="nav-left">
-            <a href="#">TH - THB ▾</a>
-        </div>
-
+        <div class="nav-left"><a href="#">TH - THB ▾</a></div>
         <div class="nav-center">
             <a href="#">WOMEN</a>
             <a href="#">COLLECTIONS</a>
@@ -24,57 +17,161 @@
             <a href="#">NEWS</a>
             <a href="#">STORIES</a>
         </div>
-
         <div class="nav-right">
             <a href="#" class="hide-mobile">SIGN IN</a>
-            <a href="#" aria-label="Shopping Bag">
-                <!-- ใช้ SVG สร้างไอคอนถุงช้อปปิ้งแบบเรียบง่าย -->
-                <svg class="bag-icon" viewBox="0 0 24 24">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-            </a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <a href="#"><svg class="bag-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg></a>
+            <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.add('active')">☰</button>
         </div>
     </nav>
+
+    <div id="mobileNav" class="mobile-nav-overlay">
+        <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('active')">✕</button>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">WOMEN</a>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">COLLECTIONS</a>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">EDITORIAL</a>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">NEWS</a>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">STORIES</a>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">SIGN IN</a>
+    </div>
+
     <h1 class="giant-logo">PLAIMANAS</h1>
 
-    <!-- พื้นที่แสดงวิดีโอ -->
     <section class="hero-section">
-        <video autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline id="heroVideo">
             <source src="assets/img/mockup_video576.mp4" type="video/mp4">
         </video>
     </section>
 
-    <!-- ส่วนแสดงสินค้าใหม่ -->
-    <section class="new-arrival-section">
+    <!-- NEW & BESTSELLING -->
+    <section class="section-container">
         <div class="product-card">
             <div class="image-wrapper">
-                <img src="./assets/img/7b6529a12a4f5ab332188c7dac157175d7d93817.jpg" alt="">
-                <h2 class="overlay-new-text">NEW</h2>
+                <img src="assets/img/7b6529a12a4f5ab332188c7dac157175d7d93817.jpg" alt="New">
+                <h2 class="overlay-text">NEW</h2>
             </div>
             <h3 class="product-title">Sed egestas, nibh a condimentum imperdiet</h3>
-            <p class="product-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae</p>
+            <p class="product-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo.</p>
         </div>
-    </section>
-
-    <!-- ส่วนแสดงสินค้า bestseller -->
-    <section class="bestseller-section">
         <div class="product-card">
             <div class="image-wrapper">
                 <video autoplay loop muted playsinline>
-                    <source src="assets/img/DTS_THE_LEADER_Joey_Bania_Clips_ID10.mp4" type="video/mp4">
+                    <source src="assets/img/mockup_video576.mp4" type="video/mp4">
                 </video>
-                <h2 class="overlay-new-text">bestseller</h2>
+                <h2 class="overlay-text">BESTSELLER</h2>
             </div>
             <h3 class="product-title">Sed egestas, nibh a condimentum imperdiet</h3>
-            <p class="product-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae</p>
+            <p class="product-desc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo.</p>
         </div>
     </section>
 
-    <!-- เรียกใช้ไฟล์ JavaScript จากโฟลเดอร์ js -->
-    <script src="./js/script.js"></script>
-</body>
+    <!-- COLLECTIONS -->
+    <section class="collection-section">
+        <div class="collection-grid">
+            <div class="collection-item full-width">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200" alt="C1">
+                    <h2 class="overlay-text">COLLECTION 01</h2>
+                </div>
+            </div>
+            <div class="collection-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=800" alt="C2">
+                    <h2 class="overlay-text">COLLECTION 02</h2>
+                </div>
+            </div>
+            <div class="collection-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?q=80&w=800" alt="C3">
+                    <h2 class="overlay-text">COLLECTION 03</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- MARQUEE -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item">NEW ARRIVAL <span class="ticker-arrow">←</span> BEST SELLING <span class="ticker-arrow">→</span> NEW ARRIVAL</div>
+            <div class="ticker-item">NEW ARRIVAL <span class="ticker-arrow">←</span> BEST SELLING <span class="ticker-arrow">→</span> NEW ARRIVAL</div>
+        </div>
+    </div>
+
+    <!-- FOOTER INFO -->
+    <section class="footer-info">
+        <div class="info-card"><h4>WORLDWIDE SHIPPING</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+        <div class="info-card"><h4>CUSTOMER SERVICE</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+        <div class="info-card"><h4>SECURE PAYMENT</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">What is your return policy? <span>+</span></div>
+                <div class="faq-answer">Items can be returned within 14 days of receipt, provided they are unworn and in original condition.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">Can I exchange for a different size? <span>+</span></div>
+                <div class="faq-answer">Yes, we offer exchanges for different sizes depending on availability.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INQUIRY -->
+    <section class="inquiry-section">
+        <div class="inquiry-content">
+            <h2>Make an Inquiry</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <form class="inquiry-form">
+            <div class="form-group"><input type="text" placeholder="Full name*"></div>
+            <div class="form-group"><input type="email" placeholder="Email*"></div>
+            <div class="form-group"><input type="tel" placeholder="Phone Number*"></div>
+            <div class="form-group"><select><option>Select Subject*</option></select></div>
+            <button type="submit" class="btn-send">SEND</button>
+        </form>
+    </section>
+
+    <!-- MAIN FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>ABOUT</h4>
+                <ul><li><a href="#">Women</a></li><li><a href="#">Collections</a></li></ul>
+            </div>
+            <div class="footer-column">
+                <h4>HELP</h4>
+                <ul><li><a href="#">Payment Notification</a></li><li><a href="#">FAQ</a></li></ul>
+            </div>
+            <div class="footer-column">
+                <h4>SOCIAL</h4>
+                <ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul>
+            </div>
+            <div class="footer-column">
+                <h4>LEGAL</h4>
+                <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Cookies Policy</a></li></ul>
+            </div>
+            <div class="footer-column newsletter-col">
+                <h4>NEWSLETTER</h4>
+                <input type="email" placeholder="Email">
+                <button class="btn-subscribe">SUBSCRIBE</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>©PLAIMANAS</div>
+            <a href="#" style="color:#000; text-decoration:none;">Web by ::*</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('heroVideo');
+            window.addEventListener('scroll', () => {
+                const scroll = window.scrollY;
+                if(video) video.style.opacity = Math.max(0.1, 1 - (scroll / 800));
+            });
+        });
+    </script>
+</body>
 </html>
