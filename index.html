@@ -20,19 +20,9 @@
         <div class="nav-right">
             <a href="#" class="hide-mobile">SIGN IN</a>
             <a href="#"><svg class="bag-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg></a>
-            <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.add('active')">☰</button>
+            <button class="mobile-menu-btn" style="display:none;">☰</button>
         </div>
     </nav>
-
-    <div id="mobileNav" class="mobile-nav-overlay">
-        <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('active')">✕</button>
-        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">WOMEN</a>
-        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">COLLECTIONS</a>
-        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">EDITORIAL</a>
-        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">NEWS</a>
-        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">STORIES</a>
-        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">SIGN IN</a>
-    </div>
 
     <h1 class="giant-logo">PLAIMANAS</h1>
 
@@ -46,7 +36,7 @@
     <section class="section-container">
         <div class="product-card">
             <div class="image-wrapper">
-                <img src="assets/img/7b6529a12a4f5ab332188c7dac157175d7d93817.jpg" alt="New">
+                <img src="assets/img/mockup_img1.png" alt="New">
                 <h2 class="overlay-text">NEW</h2>
             </div>
             <h3 class="product-title">Sed egestas, nibh a condimentum imperdiet</h3>
@@ -54,9 +44,7 @@
         </div>
         <div class="product-card">
             <div class="image-wrapper">
-                <video autoplay loop muted playsinline>
-                    <source src="assets/img/mockup_video576.mp4" type="video/mp4">
-                </video>
+                <img src="assets/img/mockup_img1.png" alt="Bestseller">
                 <h2 class="overlay-text">BESTSELLER</h2>
             </div>
             <h3 class="product-title">Sed egestas, nibh a condimentum imperdiet</h3>
@@ -65,7 +53,7 @@
     </section>
 
     <!-- COLLECTIONS -->
-    <section class="collection-section">
+    <section style="display: flex; justify-content: center; background: #fff;">
         <div class="collection-grid">
             <div class="collection-item full-width">
                 <div class="image-wrapper">
